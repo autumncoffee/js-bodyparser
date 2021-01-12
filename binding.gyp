@@ -4,11 +4,11 @@
       "target_name": "ac_bodyparser",
       "sources": [
         "<!@(find src -type f -name '*.cpp')",
-        "<!@(find node_modules/ac-common/*.cpp -type f)",
-        "<!@(find node_modules/ac-common/utils/*.cpp -type f)",
-        "<!@(find node_modules/ac-library/http/utils/*.cpp -type f)",
-        "<!@(find node_modules/ac-library/http/abstract_message.cpp -type f)",
-        "<!@(find node_modules/ac-library/httplike/parser/parser.cpp -type f)"
+        "<!@(find `node -p \"require('path').relative('', require('ac-common').root)\"`/*.cpp -type f)",
+        "<!@(find `node -p \"require('path').relative('', require('ac-common').root)\"`/utils/*.cpp -type f)",
+        "<!@(find `node -p \"require('path').relative('', require('ac-library').root)\"`/http/utils/*.cpp -type f)",
+        "<!@(find `node -p \"require('path').relative('', require('ac-library').root)\"`/http/abstract_message.cpp -type f)",
+        "<!@(find `node -p \"require('path').relative('', require('ac-library').root)\"`/httplike/parser/parser.cpp -type f)"
       ],
       "cflags!": [ "-fno-exceptions", "-fno-rtti" ],
       "cflags_cc!": [ "-fno-exceptions", "-fno-rtti" ],
@@ -16,7 +16,8 @@
       "cflags_cc": [ "-std=c++17" ],
       "include_dirs": [
         "<!@(node -p \"require('node-addon-api').include\")",
-        "node_modules"
+        "<!@(node -p \"require('path').dirname(require('ac-common').root)\")",
+        "<!@(node -p \"require('path').dirname(require('ac-library').root)\")"
       ],
       "defines": [ "NAPI_CPP_EXCEPTIONS" ],
       "conditions": [
