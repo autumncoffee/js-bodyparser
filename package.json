@@ -1,14 +1,14 @@
 {
   "name": "ac-bodyparser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Yet another bodyparser",
   "main": "ac_bodyparser.js",
   "private": true,
   "dependencies": {
-    "bindings": "~1.2.1",
-    "node-addon-api": "^1.0.0",
-    "ac-common": "autumncoffee/cxx-common#v1.0.2",
-    "ac-library": "autumncoffee/cxx-library#v1.0.5"
+    "ac-common": "autumncoffee/cxx-common#v1.0.3",
+    "ac-library": "autumncoffee/cxx-library#v1.0.6",
+    "bindings": "^1.5.0",
+    "node-addon-api": "^8.3.0"
   },
   "scripts": {
     "test": "node ./test.js"
